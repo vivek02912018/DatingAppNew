@@ -7,7 +7,7 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-baseUrl='https://localhost:44342/api/auth/';
+baseUrl='https://localhost:5001/api/auth/';
 constructor(private http: HttpClient) { }
 
 
