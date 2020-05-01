@@ -14,6 +14,7 @@ import { User } from '../_models/user';
 })
 export class UserService {
   baseUrl = environment.apiUrl;
+  
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
@@ -22,8 +23,18 @@ export class UserService {
   getUser(id): Observable<User> {
     return this.http.get<User>(this.baseUrl + 'users/' + id);
   }
-  updateUser(id: number,user:User){
-    console.log('this  +'+id+user)
-    return this.http.put(this.baseUrl+ 'users/'+id,user);
+  updateUser(id: number, user: User) {
+    console.log('this  +' + id + user);
+    return this.http.put(this.baseUrl + 'users/' + id, user);
+  }
+  setMainPhoto(userId: number, idofPhoto: number) {
+    return this.http.post(
+      this.baseUrl + 'users/' + userId + '/photos/' + idofPhoto + '/setMain',{}
+    );
+  }
+  deletePhoto(userId: number,idofPhotoToDelete : number){
+    return this.http.delete(
+      this.baseUrl + 'users/' + userId + '/photos/' + idofPhotoToDelete
+    );
   }
 }
