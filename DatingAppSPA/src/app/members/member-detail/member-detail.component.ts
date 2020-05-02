@@ -17,6 +17,7 @@ import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
   styleUrls: ['./member-detail.component.css'],
 })
 export class MemberDetailComponent implements OnInit {
+  today: number = Date.now();
   user: User;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];

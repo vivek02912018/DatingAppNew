@@ -33,20 +33,17 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import {DateAgoPipe} from '../app/pipes/DateAgo.pipe';//custom created pipe
 
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
 
-// export class CustomHammerConfig extends HammerGestureConfig  {
-//   overrides = {
-//       pinch: { enable: false },
-//       rotate: { enable: false }
-//   };
-// }
+
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     ValueComponent,
     NavComponent,
@@ -59,6 +56,7 @@ export function tokenGetter() {
     MemberDetailComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    DateAgoPipe
 
   ],
   imports: [
