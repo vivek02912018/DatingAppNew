@@ -34,7 +34,8 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import {DateAgoPipe} from '../app/pipes/DateAgo.pipe';//custom created pipe
-
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -63,6 +64,7 @@ export function tokenGetter() {
     BrowserModule,
     HttpClientModule,
     FormsModule,
+   
     ReactiveFormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
@@ -72,6 +74,8 @@ export function tokenGetter() {
     // NgxGalleryModule,
       NgxGalleryModule,
       FileUploadModule,
+      PaginationModule.forRoot(),
+      ButtonsModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
