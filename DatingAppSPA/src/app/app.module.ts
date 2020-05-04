@@ -36,6 +36,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import {DateAgoPipe} from '../app/pipes/DateAgo.pipe';//custom created pipe
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { ListResolver } from './_resolvers/list.resolver';
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -93,7 +94,8 @@ export function tokenGetter() {
     AuthService,
     MemberListResolver,
     MemberEditResolver,
-    PreventUnsavedChanges
+    PreventUnsavedChanges,
+    ListResolver
     // { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
   ],
   bootstrap: [AppComponent],
